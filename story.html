@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>مجردد محاولههه !</title>
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #0d0d12;
+    color: #f2f2f2;
+    font-family: Tahoma, Arial;
+    direction: rtl;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    width: 90%;
+    max-width: 650px;
+    background-color: #1a1a26;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.7);
+    text-align: center;
+}
+
+.scene {
+    width: 100%;
+    max-height: 300px;
+    object-fit: contain;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    animation: fade 0.6s ease;
+}
+
+p {
+    font-size: 17px;
+    line-height: 1.9;
+    margin-bottom: 20px;
+    animation: fade 0.6s ease;
+}
+
+button {
+    padding: 10px 22px;
+    margin: 5px;
+    font-size: 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #3b3b55;
+    color: #fff;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #5a5a88;
+}
+
+@keyframes fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+</style>
+</head>
+
+
+<body>
+
+<div class="container">
+    <img id="scene" class="scene" src="phone.png">
+
+    <p id="text">
+        الساعة 1:47 فجرًا.<br>
+        هاتفك يضيء بإشعار غريب من تطبيق لم تحمليه مسبقا على جهازك:<br><br>
+        «نحن نراك الآن.»
+    </p>
+
+    <div id="choices">
+        <button onclick="lookBack()">تنظرين خلفك</button>
+        <button onclick="closePhone()">تغلقين الهاتف</button>
+    </div>
+</div>
+
+<script>
+function lookBack() {
+    document.getElementById("scene").src = "mirror.png";
+    document.getElementById("text").innerHTML =
+        "تلتفتين ببطء…<br>الغرفة فارغة،<br>لكن انعكاسك يتأخر.";
+
+    document.getElementById("choices").innerHTML = `
+        <button onclick="badEnding()">تكسرين المراية</button>
+        <button onclick="escape()">تهربين</button>
+    `;
+}
+
+function closePhone() {
+    document.getElementById("scene").src = "phone.png";
+    document.getElementById("text").innerHTML =
+        "تغلقين الهاتف…<br><br>«قرار ذكي.»";
+
+    document.getElementById("choices").innerHTML = `
+        <button onclick="goodEnding()">تحذفين التطبيق</button>
+ <button onclick="Ending()">تعوفيه وتنامي </button>
+
+    `;
+}
+
+function badEnding() {
+    document.getElementById("scene").src = "broken_mirror.png";
+    document.getElementById("text").innerHTML =
+        "الزجاج يتحطم…<br>لكن الانعكاس لا يختفي.<br><br><strong>نهاية ؟</strong>";
+
+    document.getElementById("choices").innerHTML = `
+    <button onclick="window.location.href='aou.html'">إعادة المحاولة</button>
+    `;
+}
+
+function escape() {
+    document.getElementById("scene").src = "dark.png";
+    document.getElementById("text").innerHTML =
+        "الهروب لا يعني النجاة…";
+
+    document.getElementById("choices").innerHTML = `
+      <button onclick="window.location.href='aou.html'">إعادة المحاولة</button>
+    `;
+}
+
+function goodEnding() {
+    document.getElementById("scene").src = "room.png";
+    document.getElementById("text").innerHTML =
+        "تحذفين التطبيق ويعود كل شيء طبيعيًا.<br><br><strong>يحح شكد بسيطه الامور معك !.... بس عفيه  ✨</strong>";
+
+    document.getElementById("choices").innerHTML = `
+      <button onclick="window.location.href='aou.html'">تجرب مره لخ ؟؟</button>
+    `;
+}
+function Ending() {
+    document.getElementById("scene").src = "phone2.png";
+   document.getElementById("text").innerHTML = `
+    تستيقظ على اشعار.<br>
+    "سنلتقي مرة أخرى"<br>
+    <strong>!!!!</strong>
+`;
+
+    document.getElementById("choices").innerHTML = `
+       <button onclick="window.location.href='aou.html'">إعادة المحاولة</button>
+    `;
+}
+
+</script>
+
+</body>
+</html>
+

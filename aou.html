@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>محاوله فقططط </title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Tahoma, sans-serif;
+    background: #000;
+  }
+
+  /* الخلفية */
+  #welcomeScreen {
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* حطي صورتك هنا */
+    background-image: url('kkkk.png');
+    position: relative;
+  }
+
+  /* صندوق الكومنتات/الترحيب */
+  #infoBox {
+    width: 70%;
+    max-width: 600px;
+    background: rgba(0,0,0,0.65);
+    color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+  }
+
+  #startBtn {
+    margin-top: 20px;
+    padding: 10px 25px;
+    font-size: 18px;
+    background: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  #startBtn:hover {
+    background: #ddd;
+  }
+</style>
+</head>
+<body>
+
+<div id="welcomeScreen">
+  <div id="infoBox">
+    <h2>ما ستراه الان هوَ مجرد محاوله لصناعه الالعاب القصصيه ! "</h2>
+    <p>تم صناعتهه بواسطه فاطمه الدره و يمكنك رؤيه نهايات مختلفه 
+    </p>
+<p2>قيم لي اللعبه بعد ما تنهي 
+    </p2>
+
+    <button id="startBtn">ابدأ</button>
+  </div>
+</div>
+<div class="rating">
+
+<script>
+  document.getElementById("startBtn").addEventListener("click", () => {
+    // هنا تربطينه بصفحة اللعبة الأصلية
+    window.location.href = "story.html";
+  });
+</script>
+
+</body>
+</html>
